@@ -50,3 +50,69 @@ class Screen:
         """Returns an Area object representing the area of the screen currently
         selected by the user. Read-only."""
         return self._screen.Selection
+
+    def Area(self, StartRow, StartCol, EndRow, EndCol):
+        pass
+
+    def Copy(self):
+        pass
+
+    def CopyAppend(self):
+        pass
+
+    def Cut(self):
+        pass
+
+    def CutAppend(self):
+        pass
+
+    def Delete(self):
+        pass
+
+    def FieldAttribute(self, row, column):
+        pass
+
+    def GetString(self, row, column, len):
+        pass
+
+    def MoveRelative(self, NumOfRows, NumOfCols):
+        pass
+
+    def MoveTo(self, row, col):
+        pass
+
+    def Paste(self):
+        pass
+
+    def PasteContinue(self):
+        pass
+
+    def PutString(self, text, row, col):
+        pass
+
+    def Search(self, text, row, col):
+        pass
+
+    def Select(self, StartRow, StartCol, EndRow, EndCol):
+        pass
+
+    def SelectAll(self):
+        pass
+
+    def SendKeys(self, String):
+        pass
+
+    def WaitForCursor(self, Row, Col, EndRow, EndCol):
+        pass
+
+    def WaitForCursorMove(self, NumOfRows, NumOfCols):
+        pass
+
+    def WaitForKeys(self):
+        pass
+
+    def WaitForString(self, text, row, col):
+        pass
+
+    def WaitHostQuiet(self, timeout=None):
+        pass
