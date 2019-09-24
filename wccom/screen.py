@@ -17,7 +17,7 @@ class Screen:
         """Returns TRUE if the cursor is within a hidden (password) field,
         otherwise FALSE. This property is valid only for 3270 or 5250 emulation
         types. Read-only."""
-        return self._screen.InHiddenField
+        return True if self._screen.InHiddenField else False
 
     @property
     def Name(self):
