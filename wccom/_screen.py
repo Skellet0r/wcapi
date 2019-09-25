@@ -1,3 +1,8 @@
+from wccom._area import Area
+from wccom._session import Session
+from wccom._system import System
+
+
 class Screen:
     def __init__(self, _object):
         self._screen = _object
@@ -5,7 +10,7 @@ class Screen:
     @property
     def Application(self):
         """Returns the System Object Read-only."""
-        return self._screen.Application
+        return System(self._screen.Application)
 
     @property
     def Col(self):
@@ -32,7 +37,7 @@ class Screen:
     @property
     def Parent(self):
         """Returns parent for the specified object. (Session). Read-only"""
-        return self._screen.Parent
+        return Session(self._screen.Parent)
 
     @property
     def Row(self):
@@ -49,11 +54,11 @@ class Screen:
     def Selection(self):
         """Returns an Area object representing the area of the screen currently
         selected by the user. Read-only."""
-        return self._screen.Selection
+        return Area(self._screen.Selection)
 
     def Area(self, StartRow, StartCol, EndRow, EndCol):
         """Returns an Area object with the defined coordinates"""
-        return self._screen.Area(StartRow, StartCol, EndRow, EndCol)
+        return Area(self._screen.Area(StartRow, StartCol, EndRow, EndCol))
 
     def Copy(self):
         """Copies the select text to the Clipboard but leaves the selected
@@ -126,7 +131,7 @@ class Screen:
         if search does not find the specified text, the Area object's Value property
         is set to an empty string, its Type property is set to xNone
         and its coordinate properties are set to -1"""
-        return self._screen.Search(text, row, col)
+        return Area(self._screen.Search(text, row, col))
 
     def Select(self, StartRow, StartCol, EndRow, EndCol):
         """Selects the area defined by the coordinates and returns
@@ -135,7 +140,7 @@ class Screen:
 
     def SelectAll(self):
         """Selects the entire screen and returns an Area object"""
-        self._screen.SelectAll
+        return Area(self._screen.SelectAll)
 
     def SendKeys(self, String):
         """Sends keystrokes to the host, including function keys."""
@@ -173,4 +178,3 @@ class Screen:
             self._screen.WaitHostQuiet(timeout)
         else:
             self._screen.WaitHostQuiet()
-
