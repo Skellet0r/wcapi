@@ -37,3 +37,5 @@ class System:
     def Version(self):
         pass
 
+    def Quit(self):
+        pass
