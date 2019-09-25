@@ -7,35 +7,46 @@ class System:
 
     @property
     def ActiveSession(self):
-        pass
+        """Returns the currently active Session object. Read-only"""
+        return self._system.ActiveSession
 
     @property
     def Application(self):
-        pass
+        """Returns the System object. Read-only"""
+        return self._system.Application
 
     @property
     def FullName(self):
-        pass
+        """Returns a string specifying the path and filename. Read-only."""
+        return self._system.FullName
 
     @property
     def Name(self):
-        pass
+        """Returns the name of the object as a string. Read-only."""
+        return self._system.Name
 
     @property
     def Parent(self):
-        pass
+        """Returns the parent of the specified object. Read-only."""
+        return self._system.Parent
 
     @property
     def Sessions(self):
-        pass
+        """Returns the Sessions collection containing the individual Session
+        objects that are currently open. Read-only."""
+        return self._system.Sessions
 
     @property
     def TimeoutValue(self):
-        pass
+        """Sets or returns the timeout interval (or default timeout interval) in
+        milliseconds used by some Wait operations.
+        The initial default timeout value is 30,000 milliseconds (30 seconds). If
+        you change TimeoutValue, the new value becomes the default."""
+        return self._system.TimeoutValue
 
     @property
     def Version(self):
-        pass
+        return self._system.Version
 
     def Quit(self):
-        pass
+        return self._system.Quit()
