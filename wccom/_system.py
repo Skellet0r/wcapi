@@ -1,5 +1,5 @@
 import comtypes.client as cc
-from wccom._session import Session
+from wccom._wraps import session
 
 
 class System:
@@ -7,9 +7,10 @@ class System:
         self._system = _object if _object else cc.CreateObject("WebConnect.System")
 
     @property
+    @session
     def ActiveSession(self):
         """Returns the currently active Session object. Read-only"""
-        return Session(self._system.ActiveSession)
+        return self._system.ActiveSession
 
     @property
     def Application(self):

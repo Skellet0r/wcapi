@@ -1,6 +1,4 @@
-from wccom._area import Area
-from wccom._session import Session
-from wccom._system import System
+from wccom._wraps import area, system, session
 
 
 class Screen:
@@ -8,9 +6,10 @@ class Screen:
         self._screen = _object
 
     @property
+    @system
     def Application(self):
         """Returns the System Object Read-only."""
-        return System(self._screen.Application)
+        return self._screen.Application
 
     @property
     def Col(self):
@@ -35,9 +34,10 @@ class Screen:
         return self._screen.OIA
 
     @property
+    @session
     def Parent(self):
         """Returns parent for the specified object. (Session). Read-only"""
-        return Session(self._screen.Parent)
+        return self._screen.Parent
 
     @property
     def Row(self):
@@ -51,14 +51,16 @@ class Screen:
         return self._screen.Rows
 
     @property
+    @area
     def Selection(self):
         """Returns an Area object representing the area of the screen currently
         selected by the user. Read-only."""
-        return Area(self._screen.Selection)
+        return self._screen.Selection
 
+    @area
     def Area(self, StartRow, StartCol, EndRow, EndCol):
         """Returns an Area object with the defined coordinates"""
-        return Area(self._screen.Area(StartRow, StartCol, EndRow, EndCol))
+        return self._screen.Area(StartRow, StartCol, EndRow, EndCol)
 
     def Copy(self):
         """Copies the select text to the Clipboard but leaves the selected
@@ -117,6 +119,7 @@ class Screen:
         """Puts text in the specified location on the screen"""
         self._screen.PutString(text, row, col)
 
+    @area
     def Search(self, text, row, col):
         """Returns an Area object with the text specified in the search.
         if search finds the specified text, the coordinate properties
@@ -131,16 +134,17 @@ class Screen:
         if search does not find the specified text, the Area object's Value property
         is set to an empty string, its Type property is set to xNone
         and its coordinate properties are set to -1"""
-        return Area(self._screen.Search(text, row, col))
+        return self._screen.Search(text, row, col)
 
     def Select(self, StartRow, StartCol, EndRow, EndCol):
         """Selects the area defined by the coordinates and returns
         an Area object"""
         return self._screen.Select(StartRow, StartCol, EndRow, EndCol)
 
+    @area
     def SelectAll(self):
         """Selects the entire screen and returns an Area object"""
-        return Area(self._screen.SelectAll)
+        return self._screen.SelectAll
 
     def SendKeys(self, String):
         """Sends keystrokes to the host, including function keys."""
