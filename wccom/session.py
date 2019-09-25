@@ -52,3 +52,19 @@ class Session:
         """Returns a value indicating the session type -- 3270, 5250. Read
         Only."""
         return self._session.Type
+
+    def Close(self):
+        """Closes the session."""
+        self._session.Close
+
+    def ReceiveFile(self, PCFile, HostFile, bQuiet):
+        """Receives a file from the host. IND$FILE is only supported."""
+        self._session.ReceiveFile(PCFile, HostFile, bQuiet)
+
+    def SendFile(self, PCFile, HostFile, bQuiet):
+        """Sends a file to the host. Only IND$FILE is supported."""
+        self._session.SendFile(PCFile, HostFile, bQuiet)
+
+    def WaitForTimer(self, milliseconds):
+        """Waits for the specified number of milliseconds to elapse."""
+        self._session.WaitForTimer(milliseconds)
