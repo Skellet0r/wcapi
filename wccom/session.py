@@ -4,28 +4,51 @@ class Session:
 
     @property
     def Application(self):
-        pass
+        """Returns the System Object Read-only"""
+        return self._session.Application
 
     @property
     def Connected(self):
-        pass
+        """Returns the connection status of the session—TRUE if
+        connected, FALSE if disconnected. The property also connects
+        or disconnects from the session. ReadWrite."""
+        return True if self._session.Connected else False
 
     @property
     def FileTransferHostOS(self):
-        pass
+        """Returns or sets the host operating system used by file
+        transfers. ReadWrite.
+        This property should be set prior to executing a file transfer.
+        Valid values are as follows:
+        0 - CMS
+        1 - TSO
+        2 - CICS"""
+        return self._session.FileTransferHostOS
 
     @property
     def FullName(self):
-        pass
+        """Returns a string specifying full name of session"""
+        return self._session.FullName
 
     @property
     def Name(self):
-        pass
+        """Returns a string specifying name of session"""
+        return self._session.Name
+
+    @property
+    def Parent(self):
+        """Returns the parent of the specified object. (Sessions).
+        Read-only"""
+        return self._session.Parent
 
     @property
     def Screen(self):
-        pass
+        """Returns the Screen object associated with the
+        session.Read-only"""
+        return self._session.Screen
 
     @property
     def Type(self):
-        pass
+        """Returns a value indicating the session type -- 3270, 5250. Read
+        Only."""
+        return self._session.Type
