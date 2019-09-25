@@ -1,3 +1,7 @@
+from wccom._system import System
+from wccom._screen import Screen
+
+
 class Session:
     def __init__(self, _object):
         self._session = _object
@@ -5,7 +9,7 @@ class Session:
     @property
     def Application(self):
         """Returns the System Object Read-only"""
-        return self._session.Application
+        return System(self._session.Application)
 
     @property
     def Connected(self):
@@ -45,7 +49,7 @@ class Session:
     def Screen(self):
         """Returns the Screen object associated with the
         session.Read-only"""
-        return self._session.Screen
+        return Screen(self._session.Screen)
 
     @property
     def Type(self):
