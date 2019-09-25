@@ -1,3 +1,7 @@
+from wccom._screen import Screen
+from wccom._system import System
+
+
 class Area:
     def __init__(self, _object):
         self._area = _object
@@ -5,7 +9,7 @@ class Area:
     @property
     def Application(self):
         """Return System object. Read-only."""
-        return self._area.Application
+        return System(self._area.Application)
 
     @property
     def Bottom(self):
@@ -20,7 +24,7 @@ class Area:
     @property
     def Parent(self):
         """Returns the parent (Screen) object for the Area object. Read-only."""
-        return self._area.Parent
+        return Screen(self._area.Parent)
 
     @property
     def Right(self):
