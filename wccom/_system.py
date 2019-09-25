@@ -1,4 +1,5 @@
 import comtypes.client as cc
+from wccom._session import Session
 
 
 class System:
@@ -8,7 +9,7 @@ class System:
     @property
     def ActiveSession(self):
         """Returns the currently active Session object. Read-only"""
-        return self._system.ActiveSession
+        return Session(self._system.ActiveSession)
 
     @property
     def Application(self):
