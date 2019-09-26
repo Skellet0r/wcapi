@@ -1,4 +1,4 @@
-from wccom._wraps import system, screen
+from wccom._wraps import system, screen, sessions
 
 
 class Session:
@@ -40,6 +40,7 @@ class Session:
         return self._session.Name
 
     @property
+    @sessions
     def Parent(self):
         """Returns the parent of the specified object. (Sessions).
         Read-only"""
