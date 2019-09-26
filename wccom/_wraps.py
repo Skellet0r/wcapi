@@ -39,3 +39,13 @@ def screen(func):
         return Screen(func(*args, **kwargs))
 
     return wrap_screen
+
+
+def sessions(func):
+    @wraps(func)
+    def wrap_sessions(*args, **kwargs):
+        from wccom._sessions import Sessions
+
+        return Sessions(func(*args, **kwargs))
+
+    return wrap_sessions
