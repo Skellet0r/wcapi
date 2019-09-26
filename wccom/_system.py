@@ -1,5 +1,5 @@
 import comtypes.client as cc
-from wccom._wraps import session
+from wccom._wraps import session, sessions
 
 
 class System:
@@ -33,6 +33,7 @@ class System:
         return self._system.Parent
 
     @property
+    @sessions
     def Sessions(self):
         """Returns the Sessions collection containing the individual Session
         objects that are currently open. Read-only."""
