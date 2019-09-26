@@ -87,3 +87,7 @@ class Sessions:
         HTMLByPass property of Sessions has to be set for an SSL enabled Session
         AutoStart."""
         self._sessions.WCProxy
+
+    def CloseAll(self):
+        """Disconnect from all active sessions."""
+        self._sessions.CloseAll()
