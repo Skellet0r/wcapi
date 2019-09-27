@@ -1,6 +1,9 @@
 # WCCOM
 Webconnect COM Object wrapper
 
+> To install:  
+> pip install -e git+https://github.com/Skellet0r/WCCOM.git#egg=wccom
+
 This package was made with the intent of wrapping the functions of the WebConnect. System object, in the wccom.dll file.
 
 The object works in conjunction with the WebConnect Terminal Emulator which is a TN3270 emulator. This program is the main access point  
