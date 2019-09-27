@@ -91,3 +91,23 @@ class Sessions:
     def CloseAll(self):
         """Disconnect from all active sessions."""
         self._sessions.CloseAll()
+
+    def Item(self, index):
+        """Returns an element in the collection. The numeric index refers to the
+        sequence that the sessions were opened. For example, Item(1) refers to
+        the first session opened, Item(2) refers to the second session opened
+        and so on"""
+        self._sessions.Item(index)
+
+    def Open(self, sessName):
+        """Returns an existing session and add it to the Sessions collection.
+        If WebConnect applet is not running at the time of this call, then an
+        attempt will be made to load the JRE 1.4 JVM and start up the applet
+        based on the most recent properties set prior to this call. After the
+        connection is made then a session is return and it is added to the
+        Sessions collection. Every autostarted session will invoke its own copy
+        of the JRE. Autostarted sessions should be configured by the
+        WebConnect administrator to disable the File>New menu option.
+        Java console style error messages may be reviewed in the file jvm.txt
+        within the Windows c:\Temp subdirectory."""
+        self._sessions.Open(sessName)
