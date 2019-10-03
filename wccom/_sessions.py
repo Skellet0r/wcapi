@@ -1,4 +1,4 @@
-from wccom._wraps import system
+from wccom._wraps import system, session
 
 
 class Sessions:
@@ -99,6 +99,7 @@ class Sessions:
         and so on"""
         self._sessions.Item(index)
 
+    @session
     def Open(self, sessName):
         """Returns an existing session and add it to the Sessions collection.
         If WebConnect applet is not running at the time of this call, then an
