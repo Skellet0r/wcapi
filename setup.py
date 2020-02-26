@@ -11,7 +11,7 @@ setuptools.setup(
     description="WCCOM object wrapper",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/Skellet0r/WCCOM",
+    url="https://github.com/Skellet0r/wcapi",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3.7",
