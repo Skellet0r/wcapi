@@ -1,5 +1,5 @@
 import comtypes.client as cc
-from wccom._wraps import session, sessions
+from wcapi._wraps import session, sessions
 
 
 class System:

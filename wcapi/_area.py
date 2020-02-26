@@ -1,4 +1,4 @@
-from wccom._wraps import screen, system
+from wcapi._wraps import screen, system
 
 
 class Area:

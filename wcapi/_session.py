@@ -1,4 +1,4 @@
-from wccom._wraps import system, screen, sessions
+from wcapi._wraps import system, screen, sessions
 
 
 class Session:

@@ -2,7 +2,7 @@
 Webconnect COM Object wrapper
 
 > To install:  
-> pip install -e git+https://github.com/Skellet0r/WCCOM.git#egg=wccom
+> pip install -e git+https://github.com/Skellet0r/wcapi.git#egg=wcapi
 
 This package was made with the intent of wrapping the functions of the WebConnect. System object, in the wccom.dll file.
 

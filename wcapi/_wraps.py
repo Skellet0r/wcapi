@@ -4,7 +4,7 @@ from functools import wraps
 def session(func):
     @wraps(func)
     def wrap_session(*args, **kwargs):
-        from wccom._session import Session
+        from wcapi._session import Session
 
         return Session(func(*args, **kwargs))
 
@@ -14,7 +14,7 @@ def session(func):
 def area(func):
     @wraps(func)
     def wrap_area(*args, **kwargs):
-        from wccom._area import Area
+        from wcapi._area import Area
 
         return Area(func(*args, **kwargs))
 
@@ -24,7 +24,7 @@ def area(func):
 def system(func):
     @wraps(func)
     def wrap_system(*args, **kwargs):
-        from wccom._system import System
+        from wcapi._system import System
 
         return System(func(*args, **kwargs))
 
@@ -34,7 +34,7 @@ def system(func):
 def screen(func):
     @wraps(func)
     def wrap_screen(*args, **kwargs):
-        from wccom._screen import Screen
+        from wcapi._screen import Screen
 
         return Screen(func(*args, **kwargs))
 
@@ -44,7 +44,7 @@ def screen(func):
 def sessions(func):
     @wraps(func)
     def wrap_sessions(*args, **kwargs):
-        from wccom._sessions import Sessions
+        from wcapi._sessions import Sessions
 
         return Sessions(func(*args, **kwargs))
 
