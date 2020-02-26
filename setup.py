@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="wcapi",
-    version="0.1",
+    version="0.2",
     author="Edward Amor",
     author_email="edward.amor3@gmail.com",
     description="Python WebConnect Emulator API",
