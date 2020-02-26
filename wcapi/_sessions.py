@@ -24,80 +24,72 @@ class Sessions:
         The parent for Sessions object is System object."""
         self._sessions.Parent
 
-    @property
-    def WCCertificate(self):
+    def setWCCertificate(self, value):
         """Sets the value of certificate fingerprint required by the
         WebConnect server to create a SSL connection between the COM object
         and WebConnect Server. To obtain the correct certificate fingerprint
-        go to 'security' subdirectory within the home directory of 
+        go to 'security' subdirectory within the home directory of
         WebConnect server. Run showcert program to get the cert.
         Make sure to remove all blanks before assigning it to WCCertificate.
         HTMLByPass property of Sessions has to be set for an SSL enabled Session AutoStart"""
-        self._sessions.WCCertificate
+        self._sessions.WCCertificate = value
 
-    @property
-    def WCCipherSuite(self):
+    def setWCCipherSuite(self, value):
         """Assigned a predefined value of Cipher suites supported by WebConnect server
         for SSL connection. All support cipher suites are defined in SSLCipherSuites module part
         of the COM object and are listed below under Syntax. HTMLByPass property of Sessions
         has to be set for an SSL enabled Session AutoStart.
         The cipher selected by this property must match the cipher configured in the target WebConnect session."""
-        self._sessions.WCCipherSuite
+        self._sessions.WCCipherSuite = value
 
-    @property
-    def WCHTMLByPass(self):
-        """Sets the WebConnect session connenction mode. If HTMLByPass is se
+    def setWCHTMLByPass(self, value):
+        """Sets the WebConnect session connenction mode. If HTMLByPass is set
         then a direct connection to WebConnect Server is performed and jhllapi.html is by passed"""
-        self._sessions.WCHTMLByPass
+        self._sessions.WCHTMLByPass = value
 
-    @property
-    def WCServerName(self):
+    def setWCServerName(self, value):
         """Sets the server (host) name of machine where the WebConnect Server is running.
         This server is used to establish a session."""
-        self._sessions.WCServerName
+        self._sessions.WCServerName = value
 
-    @property
-    def WCSessionType(self):
+    def setWCSessionType(self, value):
         """Sets the WebConnect applet session type. Support session types are 3270 and 5250"""
-        self._sessions.WCSessionType
+        self._sessions.WCSessionType = value
 
-    @property
-    def WCServerPort(self):
+    def setWCServerPort(self, value):
         """Sets the WebConnect Server HTML port. Takes a string"""
-        self._sessions.WCServerPort
+        self._sessions.WCServerPort = value
 
-    @property
-    def WCServerUserid(self):
+    def setWCServerUserid(self, value):
         """Sets the WebConnect Server Userid. If provided,
         Userid and Password will be used to do Userid/Password
         authentication with WebConnect Server before requested session is started."""
-        self._sessions.WCServerUserid
+        self._sessions.WCServerUserid = value
 
-    @property
-    def WCServerPasswd(self):
+    def setWCServerPasswd(self, value):
         """Sets the WebConnect Server Password. If provided, Userid and Password
         will be used to do Userid/Password authentication with WebConnect Server
         before requested session is started."""
-        self._sessions.WCServerPasswd
+        self._sessions.WCServerPasswd = value
 
-    @property
-    def WCProxy(self):
+    def setWCProxy(self, value):
         """Set the value of Proxy hostname required by the WebConnect
         server if a proxy is desired to connect to the server.
         HTMLByPass property of Sessions has to be set for an SSL enabled Session
         AutoStart."""
-        self._sessions.WCProxy
+        self._sessions.WCProxy = value
 
     def CloseAll(self):
         """Disconnect from all active sessions."""
         self._sessions.CloseAll()
 
+    @session
     def Item(self, index):
         """Returns an element in the collection. The numeric index refers to the
         sequence that the sessions were opened. For example, Item(1) refers to
         the first session opened, Item(2) refers to the second session opened
         and so on"""
-        self._sessions.Item(index)
+        return self._sessions.Item(index)
 
     @session
     def Open(self, sessName):
@@ -110,5 +102,5 @@ class Sessions:
         of the JRE. Autostarted sessions should be configured by the
         WebConnect administrator to disable the File>New menu option.
         Java console style error messages may be reviewed in the file jvm.txt
-        within the Windows c:\Temp subdirectory."""
-        self._sessions.Open(sessName)
+        within the Windows c:\\Temp subdirectory."""
+        return self._sessions.Open(sessName)

@@ -46,7 +46,7 @@ class System:
         The initial default timeout value is 30,000 milliseconds (30 seconds). If
         you change TimeoutValue, the new value becomes the default."""
         return self._system.TimeoutValue
-    
+
     def setTimeoutValue(self, value):
         """Sets the timeout interval (or default timeout interval) in
         milliseconds used by some Wait operations.
