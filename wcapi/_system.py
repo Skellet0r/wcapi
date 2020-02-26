@@ -41,15 +41,24 @@ class System:
 
     @property
     def TimeoutValue(self):
-        """Sets or returns the timeout interval (or default timeout interval) in
+        """Returns the timeout interval (or default timeout interval) in
         milliseconds used by some Wait operations.
         The initial default timeout value is 30,000 milliseconds (30 seconds). If
         you change TimeoutValue, the new value becomes the default."""
         return self._system.TimeoutValue
+    
+    def setTimeoutValue(self, value):
+        """Sets the timeout interval (or default timeout interval) in
+        milliseconds used by some Wait operations.
+        The initial default timeout value is 30,000 milliseconds (30 seconds). If
+        you change TimeoutValue, the new value becomes the default."""
+        self._system.TimeoutValue = value
+        return self.TimeoutValue
 
     @property
     def Version(self):
         return self._system.Version
 
     def Quit(self):
-        return self._system.Quit()
+        """Closes all sessions."""
+        self._system.Quit()
