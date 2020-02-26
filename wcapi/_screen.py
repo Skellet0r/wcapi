@@ -13,8 +13,12 @@ class Screen:
 
     @property
     def Col(self):
-        """Returns or sets the column position of the cursor. First column is 1."""
+        """Returns the column position of the cursor. First column is 1."""
         return self._screen.Col
+
+    def setCol(self, value):
+        """Sets the column position of the cursor. First column is 1."""
+        self._screen.Col = value
 
     @property
     def InHiddenField(self):
@@ -41,8 +45,20 @@ class Screen:
 
     @property
     def Row(self):
-        """Returns or sets the row position of the cursor. First row is 1."""
+        """Returns the row position of the cursor. First row is 1."""
         return self._screen.Row
+
+    def setRow(self, value):
+        """Returns the row position of the cursor. First row is 1."""
+        self._screen.Row = value
+
+    @property
+    def Updated(self):
+        """Returns TRUE if the Screen object has been updated since the last time
+        this property was checked. If the object has not been updated
+        the property returns FALSE
+        NOT WORKING"""
+        return self._screen.Updated
 
     @property
     def Rows(self):
