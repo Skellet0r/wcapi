@@ -14,7 +14,7 @@ The MSI installer can be found at the following [link](https://webconnect-demo.o
 **via pip**
 
 ```shell
-$ pip install https://github.com/Skellet0r/wcapi.git#egg=wcapi
+$ pip install git+https://github.com/Skellet0r/wcapi.git#egg=wcapi
 ```
 
 **via git**
