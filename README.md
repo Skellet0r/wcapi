@@ -3,8 +3,6 @@
 ![license](https://img.shields.io/github/license/Skellet0r/wcapi)
 ![repo size](https://img.shields.io/github/repo-size/Skellet0r/wcapi)
 
-
-Python WebConnect Emulator API  
 `wcapi` is a wrapper library around the `WebConnect COM Object Interface`. It allows users to interact with the System, Sessions, and Screen objects from within python.
 The methods and properties of the various objects are described in the WebConnect COM Object Reference Guide Edition 7.
 
