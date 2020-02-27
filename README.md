@@ -9,7 +9,7 @@ The methods and properties of the various objects are described in the WebConnec
 ## Prerequisites
 
 - The `WebConnect Emulation APIs` need to be installed and registered on your system.
-The MSI installer can be found at the following [link](https://webconnect-demo.openconnect.com) under **Downloads**. A torrent file for the MSI installer is also located at the follwoing [link](http://www.mediafire.com/file/50q6ho1bu0pm6ch/wccomobj.msi.torrent/file).
+The MSI installer can be found at the following [link](https://webconnect-demo.openconnect.com) under **Downloads**.
 
 - `git` needs to be installed on the system.
 
