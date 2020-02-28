@@ -12,20 +12,20 @@ class Session:
         return self._session.Application
 
     @property
-    def Connected(self):
+    def Connected(self) -> bool:
         """Returns the connection status of the session—TRUE if
         connected, FALSE if disconnected. The property also connects
         or disconnects from the session. ReadWrite."""
         return True if self._session.Connected else False
 
-    def setConnected(self, value):
+    def setConnected(self, value: int):
         """Sets the connection status of the session—TRUE if
         connected, FALSE if disconnected. The property also connects
         or disconnects from the session"""
         self._session.Connected = value
 
     @property
-    def FileTransferHostOS(self):
+    def FileTransferHostOS(self) -> int:
         """Returns the host operating system used by file
         transfers. ReadWrite.
         This property should be set prior to executing a file transfer.
@@ -46,70 +46,70 @@ class Session:
         self._session.FileTransferHostOS = value
 
     @property
-    def FullName(self):
+    def FullName(self) -> str:
         """Returns a string specifying full name of session"""
         return self._session.FullName
 
     @property
-    def Height(self):
+    def Height(self) -> int:
         """Returns the height of the session window in pixels."""
         return self._session.Height
 
-    def setHeight(self, value):
+    def setHeight(self, value: int):
         """Sets the height of the session window in pixels."""
         self._session.Height = value
 
     @property
-    def KeyboardLocked(self):
+    def KeyboardLocked(self) -> bool:
         """Returns the keyboard input state for the session
         TRUE to block keyboard input; FALSE to accept keyboard input."""
-        return self._session.KeyboardLocked
+        return bool(self._session.KeyboardLocked)
 
-    def setKeyboardLocked(self, value):
+    def setKeyboardLocked(self, value: int):
         """Sets the keyboard input state for the session
         TRUE to block keyboard input; FALSE to accept keyboard input."""
         self._session.KeyboardLocked = value
 
     @property
-    def KeyMap(self):
+    def KeyMap(self) -> str:
         """Returns the keyboard input state for the session
         TRUE to block keyboard input; FALSE to accept keyboard input"""
         return self._session.KeyMap
 
-    def setKeyMap(self, value):
+    def setKeyMap(self, value: str):
         """Sets the keyboard input state for the session
         TRUE to block keyboard input; FALSE to accept keyboard input"""
         self._session.KeyMap = value
 
     @property
-    def Language(self):
+    def Language(self) -> str:
         """Returns the language for the session"""
         return self._session.Language
 
-    def setLanguage(self, value):
+    def setLanguage(self, value: str):
         """Sets the language for the session"""
         self._session.Language = value
 
     @property
-    def Left(self):
+    def Left(self) -> int:
         """Returns the Left property returns the horizontal position of the session"""
         return self._session.Left
 
-    def setLeft(self, value):
+    def setLeft(self, value: int):
         """Sets the Left property returns the horizontal position of the session"""
         self._session.Left = value
 
     @property
-    def Quiet(self):
+    def Quiet(self) -> bool:
         """Returns the quiet status of the status.
         TRUE if quiet, FALSE if not quiet"""
-        return self._session.Quiet
+        return bool(self._session.Quiet)
 
     def setQuiet(self, value):
         self._session.Quiet = value
 
     @property
-    def Name(self):
+    def Name(self) -> str:
         """Returns a string specifying name of session"""
         return self._session.Name
 
@@ -128,40 +128,40 @@ class Session:
         return self._session.Screen
 
     @property
-    def Type(self):
+    def Type(self) -> int:
         """Returns a value indicating the session type -- 3270, 5250. Read
         Only."""
         return self._session.Type
 
     @property
-    def Top(self):
+    def Top(self) -> int:
         """The Top property returns the vertical position of the session, in pixels"""
         return self._session.Top
 
-    def setTop(self, value):
+    def setTop(self, value: int):
         """Sets the Top property, vertical position of the session"""
         self._session.Top = value
 
     @property
-    def Visible(self):
+    def Visible(self) -> int:
         """Returns the visibility of the object
         TRUE if visible, FALSE if not"""
         return self._session.Visible
 
-    def setVisible(self, value):
+    def setVisible(self, value: int):
         """Sets the visiblity of the object"""
         self._session.Visible = value
 
     @property
-    def Width(self):
+    def Width(self) -> int:
         """Returns the width of the session window in pixels"""
         return self._session.Width
 
-    def setWidth(self, value):
+    def setWidth(self, value: int):
         """Sets the width of the session window in pixels"""
         self._session.Width = value
 
-    def setWindowState(self, value):
+    def setWindowState(self, value: str):
         """Sets the state of the session window
         normal, maximized, minimized."""
         self._session.WindowState = value

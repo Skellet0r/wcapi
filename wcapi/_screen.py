@@ -12,23 +12,23 @@ class Screen:
         return self._screen.Application
 
     @property
-    def Col(self):
+    def Col(self) -> int:
         """Returns the column position of the cursor. First column is 1."""
         return self._screen.Col
 
-    def setCol(self, value):
+    def setCol(self, value: int):
         """Sets the column position of the cursor. First column is 1."""
         self._screen.Col = value
 
     @property
-    def InHiddenField(self):
+    def InHiddenField(self) -> bool:
         """Returns TRUE if the cursor is within a hidden (password) field,
         otherwise FALSE. This property is valid only for 3270 or 5250 emulation
         types. Read-only."""
         return True if self._screen.InHiddenField else False
 
     @property
-    def Name(self):
+    def Name(self) -> str:
         """Returns name of the object as a string Read-only."""
         return self._screen.Name
 
@@ -44,16 +44,16 @@ class Screen:
         return self._screen.Parent
 
     @property
-    def Row(self):
+    def Row(self) -> int:
         """Returns the row position of the cursor. First row is 1."""
         return self._screen.Row
 
-    def setRow(self, value):
+    def setRow(self, value: int):
         """Returns the row position of the cursor. First row is 1."""
         self._screen.Row = value
 
     @property
-    def Updated(self):
+    def Updated(self) -> int:
         """Returns TRUE if the Screen object has been updated since the last time
         this property was checked. If the object has not been updated
         the property returns FALSE
@@ -61,7 +61,7 @@ class Screen:
         return self._screen.Updated
 
     @property
-    def Rows(self):
+    def Rows(self) -> int:
         """Returns the number of rows in the presentation space. Read-only.
         First row is 1."""
         return self._screen.Rows
@@ -101,23 +101,23 @@ class Screen:
         """Removes selected text from the session"""
         self._screen.Delete
 
-    def FieldAttribute(self, row, column):
+    def FieldAttribute(self, row: int, column: int) -> int:
         """Returns the field attribute value for a given row/column position on the
         current screen. Returns 0 if an invalid row or column is provided, or
         if the current screen does not contain field formatting. Valid only for
         3270 or 5250 emulation types"""
         return self._screen.FieldAttribute(row, column)
 
-    def GetString(self, row, column, len):
+    def GetString(self, row: int, column: int, len: int) -> str:
         """Returns the text from the specified screen location given length"""
         return self._screen.GetString(row, column, len)
 
-    def MoveRelative(self, NumOfRows, NumOfCols):
+    def MoveRelative(self, NumOfRows: int, NumOfCols: int):
         """Moves the cursor a specified number of rows and columns
         from its current position"""
         self._screen.MoveRelative(NumOfRows, NumOfCols)
 
-    def MoveTo(self, row, col):
+    def MoveTo(self, row: int, col: int):
         """Moves the cursor to the specified location"""
         self._screen.MoveTo(row, col)
 
@@ -131,12 +131,12 @@ class Screen:
         selection"""
         self._screen.PasteContinue
 
-    def PutString(self, text, row, col):
+    def PutString(self, text: str, row: int, col: int):
         """Puts text in the specified location on the screen"""
         self._screen.PutString(text, row, col)
 
     @area
-    def Search(self, text, row, col):
+    def Search(self, text: str, row: int, col: int):
         """Returns an Area object with the text specified in the search.
         if search finds the specified text, the coordinate properties
         Left(Starting Column)
@@ -152,7 +152,7 @@ class Screen:
         and its coordinate properties are set to -1"""
         return self._screen.Search(text, row, col)
 
-    def Select(self, StartRow, StartCol, EndRow, EndCol):
+    def Select(self, StartRow: int, StartCol: int, EndRow: int, EndCol: int):
         """Selects the area defined by the coordinates and returns
         an Area object"""
         return self._screen.Select(StartRow, StartCol, EndRow, EndCol)
@@ -162,16 +162,16 @@ class Screen:
         """Selects the entire screen and returns an Area object"""
         return self._screen.SelectAll
 
-    def SendKeys(self, String):
+    def SendKeys(self, String: str):
         """Sends keystrokes to the host, including function keys."""
         self._screen.SendKeys(String)
 
-    def WaitForCursor(self, Row, Col, EndRow, EndCol):
+    def WaitForCursor(self, Row: int, Col: int, EndRow: int, EndCol: int):
         """Waits until the cursor is at the specified location. The method will
         wait for the length of time set in System.TimeoutValue (default. 30 sec)"""
         self._screen.WaitForCursor(Row, Col, EndRow, EndCol)
 
-    def WaitForCursorMove(self, NumOfRows, NumOfCols):
+    def WaitForCursorMove(self, NumOfRows: int, NumOfCols: int):
         """Waits until the cursor has moved the specified number
         of rows and columns from its current position. the method will
         wait for the length of time set in System.TimeoutValue"""
@@ -182,7 +182,7 @@ class Screen:
         time to elapse before the program will continue"""
         self._screen.WaitForKeys()
 
-    def WaitForString(self, text, row, col):
+    def WaitForString(self, text: str, row: int, col: int):
         """Waits until the specified text appears on the screen at
         the row spcified. The match starts at therow and column
         specified and will match along the rest of the column positions

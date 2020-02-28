@@ -12,10 +12,10 @@ class Sessions:
         self._sessions.Application
 
     @property
-    def Count(self):
+    def Count(self) -> int:
         """Returns the number of items in the collection of objects.
         Read-only. The number of open sessions."""
-        self._sessions.Count
+        return self._sessions.Count
 
     @property
     @system

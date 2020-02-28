@@ -18,12 +18,12 @@ class System:
         return self._system.Application
 
     @property
-    def FullName(self):
+    def FullName(self) -> str:
         """Returns a string specifying the path and filename. Read-only."""
         return self._system.FullName
 
     @property
-    def Name(self):
+    def Name(self) -> str:
         """Returns the name of the object as a string. Read-only."""
         return self._system.Name
 
@@ -40,18 +40,18 @@ class System:
         return self._system.Sessions
 
     @property
-    def TimeoutValue(self):
+    def TimeoutValue(self) -> int:
         """Returns the timeout interval (or default timeout interval) in
         milliseconds used by some Wait operations."""
         return self._system.TimeoutValue
 
-    def setTimeoutValue(self, value):
+    def setTimeoutValue(self, value: int):
         """Sets the timeout interval (or default timeout interval) in
         milliseconds used by some Wait operations."""
         self._system.TimeoutValue = value
 
     @property
-    def Version(self):
+    def Version(self) -> str:
         return self._system.Version
 
     def Quit(self):
